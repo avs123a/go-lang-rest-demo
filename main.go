@@ -26,10 +26,10 @@ func main() {
 	}
 	defer db.Close()
 
-	db.AutoMigrate(&Customer{})
+	db.AutoMigrate(&Task{})
 
 	r := gin.Default()
-	// Get customers
+	// Get tasks
 	r.GET("/tasks", getTasks)
 	// Get task by id
 	r.GET("/task/:id", getTaskById)
